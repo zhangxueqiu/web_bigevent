@@ -42,14 +42,15 @@ function renderAvatar(user){
     //欢迎语处理
     var name = user.nickname||user.username
     $('.welcome').html(`欢迎&nbsp;&nbsp;`+name).show()
+    console.log(user)
     //头像渲染
     if(user.user_pic!==null){
         //图片头像
+        $('.text-avatra').hide()
         $('.layui-nav-img').attr('src',user.user_pic)
-        $('text-avatra').hide()
     }else{
         //文本头像
-        $('.text-avatra').html(name[0].toUpperCase())
         $('.layui-nav-img').hide()
+        $('.text-avatra').html(name[0].toUpperCase())
     }
 }
